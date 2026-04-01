@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap');
+
+.seccionmapa {
+  position: relative;
+  width: 100%;
+  padding: 120px 20px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #141414, #000000 85%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.seccionmapa::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: brilloMapa 12s linear infinite;
+}
+
+.seccionmapa::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 70%);
+}
+
+@keyframes brilloMapa {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(60px, 60px);
+  }
+}
+
+.mapacontenido {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 700px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.mapacontenido::before {
+  content: "";
+  display: block;
+  width: min(180px, 40vw);
+  height: 1px;
+  margin: 0 auto 35px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.mapacontenido h2 {
+    margin: 0 0 40px; /* 👈 más aire */
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+.mapa-nombre {
+  margin: 0 0 12px;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  line-height: 1.1;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  margin-bottom: 18px;
+}
+
+.mapa-direccion {
+  margin: 0 0 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.6;
+  opacity: 0.88;
+}
+
+.mapa-boton {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 0 18px rgba(255, 255, 255, 0.08),
+    inset 0 0 10px rgba(255, 255, 255, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.mapa-boton:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.12),
+    inset 0 0 10px rgba(255, 255, 255, 0.04);
+}
+
+.mapa-boton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .seccionmapa {
+    padding: 100px 16px 70px;
+  }
+
+  .mapacontenido::before {
+    margin-bottom: 28px;
+  }
+
+  .mapa-direccion {
+    margin-bottom: 28px;
+  }
+
+  .mapa-boton {
+    width: 100%;
+    max-width: 260px;
+    padding: 13px 22px;
+  }
+}

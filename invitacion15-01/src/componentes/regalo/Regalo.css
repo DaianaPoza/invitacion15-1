@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap');
+
+.seccionregalo {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #1a1a1a, #000000 80%);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.seccionregalo::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: brilloRegalo 10s linear infinite;
+}
+
+.seccionregalo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+}
+
+@keyframes brilloRegalo {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 50px);
+  }
+}
+
+.regalocontenido {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.regalo-icono {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.regalocontenido h2 {
+  margin: 0 0 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 3px;
+}
+
+.regalo-frase {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.8;
+  opacity: 0.88;
+}
+
+.regalo-acciones {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.regalo-item {
+  width: 100%;
+  max-width: 300px;
+}
+
+.regalo-toggle,
+.regalo-copiar {
+  padding: 12px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.regalo-toggle:hover,
+.regalo-copiar:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.12);
+}
+
+.regalo-toggle:active,
+.regalo-copiar:active {
+  transform: translateY(0);
+}
+
+.regalo-desplegable {
+  margin-top: 16px;
+  padding: 22px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 0 18px rgba(255, 255, 255, 0.08),
+    inset 0 0 10px rgba(255, 255, 255, 0.03);
+}
+
+.regalo-desplegable p {
+  margin: 0 0 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  word-break: break-word;
+  opacity: 0.92;
+}
+
+.regalo-mensaje {
+  display: inline-block;
+  margin-top: 26px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .seccionregalo {
+    min-height: auto;
+    padding: 70px 16px;
+  }
+
+  .regalo-frase {
+    margin-bottom: 32px;
+  }
+
+  .regalo-acciones {
+    gap: 16px;
+  }
+
+  .regalo-item {
+    max-width: 100%;
+  }
+
+  .regalo-toggle,
+  .regalo-copiar {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .regalo-desplegable {
+    padding: 18px 14px;
+  }
+}

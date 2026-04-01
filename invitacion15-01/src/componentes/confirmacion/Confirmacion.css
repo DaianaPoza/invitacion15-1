@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap');
+
+.seccionconfirmacion {
+  position: relative;
+  width: 100%;
+  padding: 120px 20px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #141414, #000000 85%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.seccionconfirmacion::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: brilloConfirmacion 12s linear infinite;
+}
+
+.seccionconfirmacion::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 70%);
+}
+
+@keyframes brilloConfirmacion {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(60px, 60px);
+  }
+}
+
+.confirmacioncontenido {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.confirmacioncontenido::before {
+  content: "";
+  display: block;
+  width: min(180px, 40vw);
+  height: 1px;
+  margin: 0 auto 35px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.confirmacioncontenido h2 {
+  margin: 0 0 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  letter-spacing: 4px;
+}
+
+.confirmacion-formulario {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 18px rgba(255, 255, 255, 0.08),
+    inset 0 0 10px rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.confirmacion-formulario iframe {
+  display: block;
+  width: 100%;
+  min-height: 760px;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .seccionconfirmacion {
+    padding: 100px 16px 70px;
+  }
+
+  .confirmacioncontenido h2 {
+    margin-bottom: 30px;
+  }
+
+  .confirmacion-formulario iframe {
+    min-height: 820px;
+  }
+}

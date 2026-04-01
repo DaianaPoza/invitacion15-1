@@ -1,0 +1,44 @@
+.portada15 {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../assets/portada15.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 12vh;
+  }
+  
+  .portada15::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 30, 20, 0.5);
+  }
+  
+  .portada15__overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  
+  .portada15__subtitulo {
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .portada15__titulo {
+    margin-bottom: 1.5rem;
+  }
+  
+  .portada15__boton {
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+  }

@@ -1,0 +1,91 @@
+
+
+
+.body {
+  display: flex;
+  flex-direction: column;          /* uno debajo del otro */
+}
+
+
+/* El contenido central crece y empuja el footer abajo */
+.main { flex: 1 1 auto; }
+
+/* Medios fluidos: que imágenes/iframes nunca se desborden */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+  /* Lectura más prolija en títulos y párrafos */
+  h1, h2, h3, h4, p {
+    line-height: 1.5;
+    word-break: keep-all;    /* evita cortes feos */
+    hyphens: auto;           /* si el navegador lo soporta, divide bien */
+    text-wrap: pretty;       /* mejora saltos (browsers modernos) */
+  }
+
+  /* Bloques de “datos” (fecha, hora, venue) centrados y con líneas limpias */
+  .datos { text-align: center; padding: 0 8px; }
+  .datos .linea { 
+    margin: .35rem 0; 
+    white-space: nowrap;     /* cada línea se mantiene en una sola línea */
+  }
+
+
+  /* Hero/footer con imagen: bajamos altura para móviles */
+  .footer-card { height: 60vh; }
+  .footer-title { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+  .footer-sub   { font-size: clamp(1rem, 3.5vw, 1.2rem); }
+
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin: 0.5rem 0;
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+  
+  h2 {
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0.5rem 0;
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  
+  h3 {
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+  
+  p {
+    line-height: 1.7;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    font-weight: 500;
+  }
+
+  html, body, #root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* evita scroll horizontal si alguna sección se “desborda” */
+  }
+  
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    will-change: opacity, transform;
+    width: 100%;
+  }
+  
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
