@@ -27,12 +27,12 @@ import Vestimenta from "../componentes/vestimenta/Vestimenta";
 function Invitacion15() {
   return (
     <>
-    <RevealOnScroll> 
+   
       {/* 👉 CONTROL DE MÚSICA */}
       <MusicPlayer />
       {/* 👉 RESTO DE LA INVITACIÓN */}
       <Header />
-      </RevealOnScroll>
+      
 
       <RevealOnScroll delay={100}>
       <Fecha />
@@ -55,9 +55,9 @@ function Invitacion15() {
 <Confirmacion />
 </RevealOnScroll>
 
-<RevealOnScroll delay={100}>
+
  <Footer />
- </RevealOnScroll>
+
 
 
     </>
